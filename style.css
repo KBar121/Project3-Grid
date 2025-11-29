@@ -1,0 +1,215 @@
+/* ==========================================
+   GLOBAL / RESET
+   ========================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Geneva, sans-serif;
+  margin: 0;
+  background-color: #1E1E1E;   /* dark page background */
+  color: #F5F5F5;
+  line-height: 1.5;
+}
+
+a {
+  color: #2E8AE6;              /* electric blue links */
+  font-weight: bold;
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #121212;   /* card-like wrapper */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.45);
+}
+
+h1, h2, h3 {
+  color: #2E8AE6;
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+/* make images responsive */
+article img,
+.row-6-unique .mini img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ==========================================
+   CARD STYLES
+   ========================================== */
+
+article {
+  background: #F5F5F5;       /* light card background */
+  color: #3A3A3A;            /* dark text */
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  border: 1px solid #2C2C2C;
+}
+
+/* Optional “tints” by column class (kept subtle) */
+.col-1 { background-color: #F5F5F5; } /* could tweak individually if you want */
+.col-2 { background-color: #F8F8F8; }
+.col-3 { background-color: #F9FAFF; }
+.col-4 { background-color: #F3F7FA; }
+
+/* Tiny car cards in Row 6 */
+.row-6-unique .mini {
+  background: #F5F5F5;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #2C2C2C;
+}
+
+/* Override height for mini images */
+.row-6-unique .mini img {
+  height: 160px;
+  object-fit: cover;
+}
+
+/* ==========================================
+   GRID SYSTEM — MOBILE FIRST
+   ========================================== */
+
+/* Every .row is a grid container */
+.row {
+  display: grid;                 /* CORE GRID PROPERTY */
+  grid-template-columns: 1fr;    /* 1 column on mobile */
+
+  gap: 16px;                     /* Space between items (grid-gap) */
+
+  margin: 30px 0;
+
+  /* Extra grid properties from MDN (with comments): */
+
+  justify-items: stretch;
+  /* justify-items: how content inside EACH grid cell is aligned horizontally.
+     'stretch' makes items fill the available cell width. */
+
+  align-items: start;
+  /* align-items: how items are aligned vertically inside their grid cell.
+     'start' pins them to the top of each cell. */
+
+  grid-auto-rows: minmax(220px, auto);
+  /* grid-auto-rows: height for implicitly created rows.
+     Here, rows will be at least 220px tall but expand for taller content. */
+
+  justify-content: space-between;
+  /* justify-content: how the entire grid is positioned horizontally within the container,
+     especially if the grid is narrower than the wrapper. */
+
+  align-content: start;
+  /* align-content: how the collection of rows is aligned vertically within the grid container
+     when there is extra vertical space. */
+}
+
+/* Row 6 is also a grid container with its own column pattern */
+.row-6-unique {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-up on mobile */
+  gap: 12px;
+
+  /* It also inherits justify-items / align-items behavior,
+     but we can override if needed. */
+}
+
+/* ==========================================
+   TABLET (min-width: 480px)
+   ========================================== */
+
+@media only screen and (min-width: 480px) {
+
+  /* 2 columns on tablet for most rows */
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Row 6: 3-up on tablet */
+  .row-6-unique {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================
+   DESKTOP (min-width: 768px)
+   ========================================== */
+
+@media only screen and (min-width: 768px) {
+
+  /* 4 equal columns on desktop (grid lines 1–5) */
+  .row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* ---------- ROW 1: four equal cards ---------- */
+  .r1 .col-1:nth-of-type(1) { grid-column: 1 / 2; }
+  .r1 .col-1:nth-of-type(2) { grid-column: 2 / 3; }
+  .r1 .col-1:nth-of-type(3) { grid-column: 3 / 4; }
+  .r1 .col-1:nth-of-type(4) { grid-column: 4 / 5; }
+
+  /* ---------- ROW 2: two wide cards ---------- */
+  .r2 .col-2:nth-of-type(1) { grid-column: 1 / 3; } /* left spans 2 cols */
+  .r2 .col-2:nth-of-type(2) { grid-column: 3 / 5; } /* right spans 2 cols */
+
+  /* ---------- ROW 3: hero full-width, Raptor centered below ---------- */
+  /* Pagani hero spans full width on first row */
+  .r3 .col-3 {
+    grid-column: 1 / 5;   /* full width across all 4 columns */
+    grid-row: 1 / 2;
+  }
+
+  /* Raptor centered below (cols 2–4) */
+  .r3 .col-1 {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+
+  /* ---------- ROW 4: banner full width ---------- */
+  .r4 .col-4 {
+    grid-column: 1 / 5;
+  }
+
+  /* ---------- ROW 5: Ferrari feature on top, others beneath ---------- */
+  /* Ferrari SF90 XX full-width top row */
+  .r5 .order-2 {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+
+  /* McLaren bottom-left */
+  .r5 .order-1 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  /* Lambo bottom-right */
+  .r5 .order-3 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+  }
+
+  /* ---------- ROW 6: five mini cars across ---------- */
+  .row-6-unique {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cars | CSS Grid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Correct CSS path (same folder as index.html) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>My CSS Grid Project</h1>
+    <p>This page demonstrates responsive layouts using <strong>CSS Grid</strong>.</p>
+
+    <!-- ================= Row 1: four individual boxes ================= -->
+    <div class="row">
+      <article class="col-1">
+        <h3>2012 Lexus LFA</h3>
+        <img
+          src="https://cdn-ildlgbp.nitrocdn.com/pyiijAcbgrNxuDJDTyNzgfFodgrxNJUO/assets/images/optimized/rev-27c1885/www.sportscarmarket.com/wp-content/uploads/2018/05/2012-lexus-lfa-nurburgring-front.jpg"
+          alt="Lexus LFA"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>4.8L V10</p>
+        <p><a href="https://en.wikipedia.org/wiki/Lexus_LFA" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+
+      <article class="col-1">
+        <h3>2019 Chevy Camaro ZL1 1LE</h3>
+        <img
+          src="https://d2v1gjawtegg5z.cloudfront.net/posts/preview_images/000/005/306/original/2018-chevrolet-camaro-zl1-1le-001-1561050025.jpg?1712245277"
+          alt="2019 Chevy Camaro ZL1 1LE"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>6.2-liter V8 • 650 HP</p>
+        <p><a href="https://en.wikipedia.org/wiki/Chevrolet_Camaro" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+
+      <article class="col-1">
+        <h3>2025 Nissan GT-R</h3>
+        <img
+          src="https://s1.cdn.autoevolution.com/images/news/gt-r-nismo-drag-races-gr-yaris-doesn-t-bat-an-eye-240861_1.jpg"
+          alt="Nissan GT-R"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>3.8L twin-turbocharged V6</p>
+        <p><a href="https://en.wikipedia.org/wiki/Nissan_GT-R" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+
+      <article class="col-1">
+        <h3>2020 Acura NSX</h3>
+        <img
+          src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2018/09/1200/675/nsx-side.jpg?ve=1&tl=1"
+          alt="Acura NSX"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>3.5L twin-turbo V6 + 3 electric motors</p>
+        <p><a href="https://en.wikipedia.org/wiki/Honda_NSX_(second_generation)" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+    </div>
+
+    <!-- ================= Row 2: two wider boxes ================= -->
+    <div class="row">
+      <article class="col-2">
+        <h3>Ford Bronco</h3>
+        <img
+          src="https://www.usatoday.com/gcdn/-mm-/6c2440ca16b6717348e58ecb357ad83c64023068/c=0-37-1696-995/local/-/media/2017/07/20/USATODAY/USATODAY/636361513911155748-AXX-MELTDOW-OJ.jpg?width=1600&height=800&fit=crop&format=pjpg&auto=webp"
+          alt="Ford Bronco"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>Iconic police-chase car</p>
+        <p><a href="https://en.wikipedia.org/wiki/Ford_Bronco" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+
+      <article class="col-2">
+        <h3>2002 Toyota Sequoia</h3>
+        <img
+          src="https://cdn.dealeraccelerate.com/collective/1/3/40/1920x1440/2002-toyota-sequoia-sr5"
+          alt="2002 Toyota Sequoia"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>Full-size Toyota SUV</p>
+        <p><a href="https://en.wikipedia.org/wiki/Toyota_Sequoia" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+    </div>
+
+    <!-- ================= Row 3: 1 narrow + 1 wide ================= -->
+    <div class="row r3 center-items">
+      <article class="col-1 card">
+        <h3>2025 Ford Raptor</h3>
+        <img
+          src="https://cimg0.ibsrv.net/ibimg/hgm/1920x1080-1/100/594/2017-hennessey-velociraptor-600-twin-turbo-based-on-the-ford-f-150-raptor_100594088.jpg"
+          alt="Ford Raptor"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>5.2L supercharged V8 • 720 HP</p>
+        <p><a href="https://en.wikipedia.org/wiki/Ford_Raptor" target="_blank" rel="noopener">Read more &gt;&gt;</a></p>
+      </article>
+
+      <article class="col-3 card hero">
+        <h2>Pagani</h2>
+        <img
+          src="https://cdn.dealeraccelerate.com/bagauction/18/3165/148230/790x1024/2018-pagani-huayra-roadster"
+          alt="Pagani Huayra Roadster"
+          style="max-width: 800px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>~$2.2M hypercar with ~740 HP.</p>
+      </article>
+    </div>
+
+    <!-- ================= Row 4: full-width banner ================= -->
+    <div class="row r4 centered center-items tight-lines">
+      <article class="col-4 banner card self-center">
+        <h2>Hypercars</h2>
+        <p></p>
+      </article>
+    </div>
+
+    <!-- ================= Row 5: 1 + 2 + 1 layout ================= -->
+    <div class="row r5 between">
+      <article class="col-1 card order-1">
+        <h3>McLaren 720S</h3>
+        <img
+          src="https://res.cloudinary.com/unix-center/image/upload/c_limit,dpr_3.0,f_auto,fl_progressive,g_center,h_580,q_75,w_906/ctjvjtjfxqavguj60uss.jpg"
+          alt="McLaren 720S"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>4.0L twin-turbo V8 • 720 HP</p>
+      </article>
+
+      <article class="col-2 card order-2">
+        <h3>Ferrari SF90 XX</h3>
+        <img
+          src="https://i.pinimg.com/736x/d6/95/a0/d695a03cb99732a3bade207401fa0096.jpg"
+          alt="Ferrari SF90 XX"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>1,030 HP from a 797-hp V8 + 233-hp electric system (three motors).</p>
+      </article>
+
+      <article class="col-1 card order-3">
+        <h3>Lamborghini Aventador</h3>
+        <img
+          src="https://res.cloudinary.com/unix-center/image/upload/c_limit,dpr_3.0,f_auto,fl_progressive,g_center,h_580,q_75,w_906/k6he0ktcmvcyq27zuhtz.jpg"
+          alt="Lamborghini Aventador"
+          style="max-width: 500px; height: auto; object-fit: cover; border-radius: 8px;"
+        >
+        <p>6.5L naturally aspirated V12 • 770 HP</p>
+      </article>
+    </div>
+
+    <!-- ================= Row 6: compact image grid ================= -->
+    <div class="row r6 row-6-unique even-lines">
+      <article class="mini"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICReBxxrUENBTz9bLNZkTD5Bb3pJFgB_fAQ&s" alt="Kia Soul"></article>
+      <article class="mini"><img src="https://cdn.hswstatic.com/gif/smart-car-1.jpg" alt="Smart Car"></article>
+      <article class="mini"><img src="https://cdn.rmsothebys.com/6/4/5/0/4/4/645044c1b33f6880c626e8b8ccdaf5960dceda4b.webp" alt="Volkswagen Beetle"></article>
+      <article class="mini"><img src="https://classicsworld.co.uk/wp-content/uploads/sites/6/2023/04/Fiat-500-3.jpg?w=900" alt="Fiat 500"></article>
+      <article class="mini"><img src="https://www.edmunds.com/assets/m/for-sale/72-jt2el43b0n0152801/img-1-600x400.jpg" alt="Toyota Corolla"></article>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Cars CSS Grid Project</p>
+    </footer>
+  </div>
+</body>
+</html>
